@@ -1,6 +1,6 @@
 // App.js - WEB
 import React, { Component } from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import WebRoutesGenerator from "./NativeWebRouteWrapper";
 import { ModalContainer } from "react-router-modal";
 import HomeScreen from "./HomeScreen";
@@ -34,7 +34,7 @@ const routeMap = {
 class App extends Component {
   render() {
     return (
-      <View style={{ height: "100vh", width: "100vw" }}>
+      <View style={styles.nav_body}>
         <TopNav />
         {WebRoutesGenerator({ routeMap })}
         <ModalContainer />
@@ -43,4 +43,15 @@ class App extends Component {
   }
 }
 
+const styles = StyleSheet.create({
+  nav_body: { 
+    height: "100vh", 
+    width: "100vw" , 
+    justifyContent: 'center', 
+    alignContent: 'space-around',  
+    flexDirection: "row"}
+});
+
 export default App;
+
+
