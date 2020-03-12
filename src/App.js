@@ -8,7 +8,8 @@ import TopNav from "./TopNav";
 import SecondScreen from "./SecondScreen";
 import UserScreen from "./UserScreen";
 import DasModalScreen from "./DasModalScreen";
-import { ThemeProvider, Gravatar, H4, gravatarStyle, Badge, Card } from "nachos-ui";
+import {Button} from 'react-native-web';
+
 const routeMap = {
   Home: {
     component: HomeScreen,
@@ -47,13 +48,8 @@ class App extends Component {
 
           <View style={styles.side_nave}>
           <View>
-            <H4>Example:</H4>
-            <Card
-              footerContent='The avocado is a tree that is native to Mexico'
-              image={{uri:'my-pic.jpg'}}
-              style={styles.cardStyle}
-            />
-            <Badge value={4} color='red' />
+          <Button title="Text content" />
+
             </View >
           </View>
           <View style={styles.side_body}>
