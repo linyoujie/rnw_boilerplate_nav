@@ -12,20 +12,7 @@ const TopNav = ({ history }) => {
   return (
     <ThemeProvider>
     <View style={styles.main}>
-      <View>
-        <H4>Example:</H4>
 
-        <Gravatar
-          md5='313cbdb52db5b6bb6b3f14bc4ddae461'
-          size={100}
-          circle
-          style={gravatarStyle}
-        />
-          <View style={{ marginTop: -55, flexDirection: 'row' }}>
-     
-          <Badge value={4} color='red' />
-          </View>
-      </View>
       <Button title="Home" onPress={() => history.push("/")} />
       <Button title="Second" onPress={() => history.push("/second")} />
     </View>
@@ -35,8 +22,8 @@ const TopNav = ({ history }) => {
 
 const styles = StyleSheet.create({
   main: {
-    flexDirection: "column",
-    //justifyContent: "space-evenly",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
     justifyContent: "center",
     backgroundColor: "#cccccc"
   }
