@@ -1,6 +1,6 @@
 // App.js - WEB
 import React, { Component } from "react";
-import { View, StyleSheet } from "react-native";
+import {  View, StyleSheet, Text } from "react-native";
 import WebRoutesGenerator from "./NativeWebRouteWrapper";
 import { ModalContainer } from "react-router-modal";
 import HomeScreen from "./HomeScreen";
@@ -8,7 +8,10 @@ import TopNav from "./TopNav";
 import SecondScreen from "./SecondScreen";
 import UserScreen from "./UserScreen";
 import DasModalScreen from "./DasModalScreen";
-import {Button} from 'react-native-web';
+import {Button, ProgressBar, ActivityIndicator, Image} from 'react-native-web';
+
+
+const uri = 'https://www.domain.com//static/img/domaincom/logo.svg';
 
 const routeMap = {
   Home: {
@@ -31,30 +34,48 @@ const routeMap = {
     modal: true
   }
 };
+const createLogger = (...msg) => () => {
+  console.log(...msg);
+};
+
+const logoUri = './my-pic.jpg';
 
 class App extends Component {
   render() {
     return (
 
-
-
-
       <View style={styles.nav_body}>
         <TopNav />
-     
-
-
         <View style={styles.row_body}>
-
           <View style={styles.side_nave}>
           <View>
-          <Button title="Text content" />
+          <View>
+      
+            <ProgressBar
+              style={{ borderRadius: 10, height: 10 }}
+              trackColor="#D1E3F6"
+              indeterminate 
+            />
+            <ActivityIndicator
+            animating 
+            color ="red"
+            size = '20px'
+            
+            />
 
+              <Image
+              rounded
+                source={{ uri: logoUri }}
+                style={{ width: 200, height: 200 }}
+              />
+
+
+                  
+                <Text style={styles.title}>Welcome to React</Text>
+              </View>
             </View >
           </View>
           <View style={styles.side_body}>
-
-      
           {WebRoutesGenerator({ routeMap })}
           <ModalContainer />
           </View>

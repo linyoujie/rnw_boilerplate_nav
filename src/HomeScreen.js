@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, Platform, StyleSheet, Button } from "react-native";
+import {Picker, Image} from 'react-native-web';
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -11,7 +12,21 @@ const instructions = Platform.select({
 
 const HomeScreen = ({ navigation }) => {
   return (
+
+  
+
     <View style={styles.container}>
+              <Image
+              rounded
+                source={{ uri: 'https://i.giphy.com/media/7OVCDfi4EJdlbpVjNq/giphy.gif' }}
+                style={{ width: 200, height: 100 }}
+              />
+
+
+      <Picker>
+        <Picker.Item label="Goblet of Fire" />
+        <Picker.Item label="Black Mode" />
+      </Picker>
       <Text style={styles.welcome}>
         Welcome to React Native Web universal app!
       </Text>
